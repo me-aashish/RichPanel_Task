@@ -9,6 +9,7 @@ const apiRoutes = require('./routes/index');
 const {UserRepository} = require('./repository/index');
 
 const setUpANdStartServer = async() =>{
+    app.use(express.static(__dirname + '/public'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended : true }));
     app.use('/api', apiRoutes);
@@ -18,6 +19,7 @@ const setUpANdStartServer = async() =>{
         await connectDB(MONGO_URI);
         console.log('DB connected');
 
+        
         // const userRepoObj = new UserRepository();
 
         // const user = await userRepoObj.create({

@@ -30,7 +30,7 @@ const signin = async(req,res) => {
     try {
         const response = await userServiceObj.signin(req.body);
         res.status(201).json({
-            message : 'successfully signed up',
+            message : 'successfully logged in',
             success : true,
             data : response,
             err : {}
