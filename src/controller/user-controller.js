@@ -1,6 +1,7 @@
 const UserService = require('../service/user-service');
 const userServiceObj = new UserService();
 
+
 const signup = async(req,res) => {
     console.log(req.body.email);
     try {
@@ -11,7 +12,7 @@ const signup = async(req,res) => {
             name : req.body.name
         });
         res.status(201).json({
-            message : 'successfully signed up',
+            message : 'successfully fetched plan chart',
             success : true,
             data : response,
             err : {}
@@ -29,6 +30,8 @@ const signup = async(req,res) => {
 const signin = async(req,res) => {
     try {
         const response = await userServiceObj.signin(req.body);
+        // req.headers['x-access-token'] = response;
+        // console.log(req.headers);
         res.status(201).json({
             message : 'successfully logged in',
             success : true,

@@ -1,3 +1,5 @@
+
+
 const loginEmail = document.getElementById('loginEmail');
 const loginPassword = document.getElementById('loginPassword');
 const loginBtn = document.getElementById('loginBtn');
@@ -25,17 +27,20 @@ loginBtn.addEventListener('click', async(e) => {
                     
                         
                 })
-                // if(data.data.success === true){
-                //     alert('Successfully loggedIn, Now you can log in');
-                // }
-                console.log(data);
-                const token = data.data;
-                localStorage.setItem('x-access-token', token);
-            } catch (error) {
-                console.log(error.response);
-                if(error.response.data.err.code === 11000){
-                    alert('Email already exists, provide unique one');
+                if(data.data.success === true){
+                    // console.log(data.data.data)
+                    const token = data.data.data;
+                    localStorage.setItem('x-access-token', token);
+                    window.location.href = "http://localhost:3000/v1/plan";
                 }
+                // console.log(data);
+                // const token = data.data;
+                // localStorage.setItem('x-access-token', token);
+            } catch (error) {
+                console.log(error);
+                // if(error.response.data.err.code === 11000){
+                //     alert('Email already exists, provide unique one');
+                // }
             }
         }
     }

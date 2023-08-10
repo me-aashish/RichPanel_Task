@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+   <table border = "1">
+    <tr>
+        <th>Plan Type</th>
+        <input type="radio" name="plan" value="Mobile"><th>Mobile</th>
+        <input type="radio" name="plan" value="Basic"><th>Basic</th>
+        <input type="radio" name="plan" value="Standard"><th>Standard</th>
+        <input type="radio" name="plan" value="Premium"><th>Premium</th>
+    </tr>
+    <tr>
+        <td>Monthly Price</td>
+        
+
+        <% plan.forEach((name)=>{ %>
+            <% let cnt = 0; %>
+            <% name.monthlyPrice.forEach((ele)=>{ %>
+                <% if(cnt == 0) { %>
+                    <td class="Mobile"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 1) { %>
+                    <td class="Basic"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 2) { %>
+                    <td class="Standard"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 3) { %>
+                    <td class="Premium"><%=ele %></td>
+                <% } %>
+                <% cnt = cnt + 1 %>
+                <!-- <td><%=ele %></td> -->
+         <%   }) %>
+       <% }) %> 
+
+    </tr>
+    
+    <tr>
+        <td>Video Quality</td>
+        
+
+        <% plan.forEach((name)=>{ %>
+            <% let cnt = 0; %>
+            <% name.videoQuality.forEach((ele)=>{ %>
+                <% if(cnt == 0) { %>
+                    <td class="Mobile"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 1) { %>
+                    <td class="Basic"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 2) { %>
+                    <td class="Standard"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 3) { %>
+                    <td class="Premium"><%=ele %></td>
+                <% } %>
+                <% cnt = cnt + 1 %>
+                
+         <%   }) %>
+       <% }) %> 
+
+    </tr>
+
+    <tr>
+        <td>Resolution</td>
+
+        <% plan.forEach((name)=>{ %>
+            <% let cnt = 0; %>
+            <% name.resolution.forEach((ele)=>{ %>
+                <% if(cnt == 0) { %>
+                    <td class="Mobile"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 1) { %>
+                    <td class="Basic"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 2) { %>
+                    <td class="Standard"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 3) { %>
+                    <td class="Premium"><%=ele %></td>
+                <% } %>
+                <% cnt = cnt + 1 %>
+                
+         <%   }) %>
+       <% }) %> 
+
+    </tr>
+
+    <tr>
+        <td>Device you can use to watch</td>
+
+        <% plan.forEach((name)=>{ %>
+            <% let cnt = 0; %>
+            <% name.watchableOn[0].forEach((ele)=>{ %>
+                <% if(cnt == 0) { %>
+                    <td class="Mobile"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 1) { %>
+                    <td class="Basic"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 2) { %>
+                    <td class="Standard"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 3) { %>
+                    <td class="Premium"><%=ele %></td>
+                <% } %>
+                <% cnt = cnt + 1 %>
+         <%   }) %>
+       <% }) %> 
+
+
+    </tr>
+
+    <tr>
+        
+        <td style="visibility: hidden;"></td>
+        <% plan.forEach((name)=>{ %>
+            <% let cnt = 0; %>
+            <% name.watchableOn[1].forEach((ele)=>{ %>
+                <% if(cnt == 0) { %>
+                    <td class="Mobile"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 1) { %>
+                    <td class="Basic"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 2) { %>
+                    <td class="Standard"><%=ele %></td>
+                <% } %>
+                <% if(cnt == 3) { %>
+                    <td class="Premium"><%=ele %></td>
+                <% } %>
+                <% cnt = cnt + 1 %>
+         <%   }) %>
+       <% }) %> 
+
+    </tr>
+
+    <tr>
+        
+        <td style="visibility: hidden;"></td>
+        <% plan.forEach((name)=>{ %>
+            <% let cnt = 0; %>
+            <% name.watchableOn[2].forEach((ele)=>{ %>
+                <% if(ele === '-'){ %>
+                    <%ele = ''%>
+               <% } %>
+               <% if(cnt == 0) { %>
+                <td class="Mobile"><%=ele %></td>
+            <% } %>
+            <% if(cnt == 1) { %>
+                <td class="Basic"><%=ele %></td>
+            <% } %>
+            <% if(cnt == 2) { %>
+                <td class="Standard"><%=ele %></td>
+            <% } %>
+            <% if(cnt == 3) { %>
+                <td class="Premium"><%=ele %></td>
+            <% } %>
+            <% cnt = cnt + 1 %>
+         <%   }) %>
+       <% }) %> 
+    </tr>
+
+    <tr>
+        <td style="visibility: hidden;"></td>
+        <% plan.forEach((name)=>{ %>
+            <% let cnt = 0; %>
+            <% name.watchableOn[3].forEach((ele)=>{ %>
+                <% if(ele === '-'){ %>
+                    <%ele = ''%>
+               <% } %>
+               <% if(cnt == 0) { %>
+                <td class="Mobile"><%=ele %></td>
+            <% } %>
+            <% if(cnt == 1) { %>
+                <td class="Basic"><%=ele %></td>
+            <% } %>
+            <% if(cnt == 2) { %>
+                <td class="Standard"><%=ele %></td>
+            <% } %>
+            <% if(cnt == 3) { %>
+                <td class="Premium"><%=ele %></td>
+            <% } %>
+            <% cnt = cnt + 1 %>
+         <%   }) %>
+       <% }) %>
+    </tr>
+
+</table>
+    <button id="nextBtn" type="submit">Next</button>
+     
+     <script>
+        const mobile = document.querySelectorAll('.Basic');
+        const nextBtn = document.getElementById('nextBtn');
+        const radioBtn = document.getElementsByName('plan');
+        
+        
+        
+        
+        nextBtn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            const token = localStorage.getItem('x-access-token');
+            console.log(token);
+            let className;
+            radioBtn.forEach((ele)=>{
+                if(ele.checked){
+                    className = ele.value;
+                }
+            })
+            console.log(className);
+            const planType = document.querySelectorAll(`.${className}`);
+            console.log(planType);
+            planType.forEach((ele)=>{
+                console.log(ele.innerText);
+            })
+            
+        })
+
+     </script>
+            
+</body>
+</html>
