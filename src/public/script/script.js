@@ -77,6 +77,6 @@ nxtBtn.addEventListener('click', (e)=>{
     localStorage.setItem('Plan Name', ref[0]);
     localStorage.setItem('Plan Name', ref[0]);
 
-    window.location.href = "http://localhost:3000/checkout.html"
+    window.location.href = "https://rp-7583.onrender.com/checkout.html"
 })
 
