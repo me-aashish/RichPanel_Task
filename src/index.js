@@ -9,7 +9,7 @@ const MONGO_URI = process.env.MONGO_URI;
 const apiRoutes = require('./routes/index');
 const {UserRepository} = require('./repository/index');
 const Plan = require('./model/plan');
-const Subscription = require('./model/subs');
+const Subscription = require('./model/subscription')
 const authMiddleware = require('./middleware/auth-request-validator');
 
 const setUpAndStartServer = async() =>{
