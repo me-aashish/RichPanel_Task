@@ -2,11 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Subscription Details</title>
+    <link rel="stylesheet" href="./style/details.css">
 </head>
 <body>
-    <h1>Success</h1>
+    <div class="container">
+        <div class="dt-container">
+            <div class="curr-plans">
+                <div class="curr-plans-details"><span>Current Plan Details</span></div>
+                <div class="active"><span>Active</span></div>
+                <span class="cancel-bt">Cancel</span>
+            </div>
+            <div class="plan-dt">
+                <span id="plan-name"></span>
+                <span id="devices"></span>
+            </div>
+            <div class="price">
+                <span><span id="plan-price"></span>/yr</span>
+            </div>
+            <div class="chn-pl-bt">
+                <span>Change Plan</span>
+            </div>
+            <div class="message">
+                <span>Your Subscription has started on Aug 11th, 2023 and will auto renew on Sep 11th, 2023.</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementsByClassName("cancel-bt")[0].addEventListener("click", function(){
+           setTimeout(() => {
+            document.getElementsByClassName("active")[0].classList = "cancel";
+            document.getElementsByClassName("cancel")[0].innerHTML = "Cancel";
+            document.getElementsByClassName("cancel-bt")[0].style.display = "None";
+            document.getElementsByClassName("chn-pl-bt")[0].innerHTML = "<span>Choose Plan</span>";
+            document.getElementsByClassName("message")[0].innerHTML = `
+            <span> Your Subscription was cancelled and you will loose access to services on Aug 11th, 2023</span>
+            `
+           }, 2000)
+        })
+        const planPrice = localStorage.getItem('Plan Price');
+        const planName = localStorage.getItem('Plan Name');
+        const devices = localStorage.getItem('Devices');
+
+       let name =  document.getElementById('plan-name').innerText = planName;
+       let dev =  document.getElementById('devices').innerText = devices;
+    let pri = document.getElementById('plan-price').innerText = planPrice;
+    </script>
 </body>
 </html>

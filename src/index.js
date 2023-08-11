@@ -32,7 +32,7 @@ const setUpAndStartServer = async() =>{
       };
       
       try {
-        app.post("/create-payment-intent", async (req, res) => {
+        app.post("/create-payment-intent",authMiddleware, async (req, res) => {
           // console.log(req.user)
           const { items } = req.body;
           console.log(items);
@@ -54,8 +54,8 @@ const setUpAndStartServer = async() =>{
           });
           const amount = calculateOrderAmount(items)/100;
           const subscriptionData = {
-            email:'dummysss',
-            name:'dummy',
+            email: req.user.email,
+            name:'req.user.name',
             plan_name:items[0].Plan_Name,
             devices:devices,
             price : amount,
@@ -67,9 +67,14 @@ const setUpAndStartServer = async() =>{
           });
         });
       } catch (error) {
-        console.log(error);
+        res.status(500).json({
+          message : 'something went wrong',
+          success : false,
+          data : {},
+          err : error
+        })
       }
-   
+      
     app.listen(PORT, async()=>{
         console.log(`Server started on ${PORT}`);
         await connectDB(MONGO_URI);
