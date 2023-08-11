@@ -21,7 +21,7 @@ registerBtn.addEventListener('click', async(e) =>{
         }
         else{
             try {
-                const data = await axios.post('https://rich-panel-task-cr5f-git-master-me-aashish.vercel.app/api/v1/signup',{
+                const data = await axios.post('https://rp-7583.onrender.com/api/v1/signup',{
                     name : nameValue,
                     email : emailValue,
                     password : passwordValue
