@@ -21,7 +21,7 @@ registerBtn.addEventListener('click', async(e) =>{
         }
         else{
             try {
-                const data = await axios.post('http://localhost:3000/api/v1/signup',{
+                const data = await axios.post('https://rich-panel-task-cr5f.vercel.app/api/v1/signup',{
                     name : nameValue,
                     email : emailValue,
                     password : passwordValue

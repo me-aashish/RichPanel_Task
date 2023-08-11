@@ -21,7 +21,7 @@ loginBtn.addEventListener('click', async(e) => {
         }
         else{
             try {
-                const data = await axios.post('http://localhost:3000/api/v1/signin',{
+                const data = await axios.post('https://rich-panel-task-cr5f.vercel.app/api/v1/signin',{
                     email : emailValue,
                     password : passwordValue
                     

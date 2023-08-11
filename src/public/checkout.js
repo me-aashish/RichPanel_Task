@@ -72,7 +72,7 @@ async function handleSubmit(e) {
     elements,
     confirmParams: {
       // Make sure to change this to your payment completion page
-      return_url: "http://localhost:3000/success.html",
+      return_url: "https://rich-panel-task-cr5f.vercel.app/success.html",
       receipt_email: emailAddress,
       
     },
