@@ -21,8 +21,8 @@
             <div class="price">
                 <span><span id="plan-price"></span>/yr</span>
             </div>
-            <div class="chn-pl-bt">
-                <span>Change Plan</span>
+            <div class="chn-pl-bt" >
+                <span id="changePlan" style="cursor: pointer;">Change Plan</span>
             </div>
             <div class="message">
                 <span>Your Subscription has started on Aug 11th, 2023 and will auto renew on Sep 11th, 2023.</span>
@@ -47,7 +47,13 @@
 
        let name =  document.getElementById('plan-name').innerText = planName;
        let dev =  document.getElementById('devices').innerText = devices;
-    let pri = document.getElementById('plan-price').innerText = planPrice;
+        let pri = document.getElementById('plan-price').innerText = planPrice;
+
+        let changePlan = document.getElementById('changePlan');
+        changePlan.addEventListener('click', (e)=>{
+            e.preventDefault();
+            window.location.href =  "https://rp-7583.onrender.com/billing.html"
+        })
     </script>
 </body>
 </html>
