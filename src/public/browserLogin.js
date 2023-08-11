@@ -31,7 +31,7 @@ loginBtn.addEventListener('click', async(e) => {
                     // console.log(data.data.data)
                     const token = data.data.data;
                     localStorage.setItem('x-access-token', token);
-                    window.location.href = "http://localhost:3000/v1/plan";
+                    window.location.href = './plan.html'
                 }
                 // console.log(data);
                 // const token = data.data;

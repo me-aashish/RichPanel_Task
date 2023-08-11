@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(239, 239, 239);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.billing-container{
+    /* background-color: red; */
+    width: 900px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.head-title{
+    margin-bottom: 40px;
+}
+.head-title span{
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/* .price-details{
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    padding: 40px;
+    height: calc(100% - 80px);
+    width: calc(100% - 80px);
+} */
+
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+/* body{
+    display: table;
+} */
+
+/*switch styles*/
+
+div.btn-container{
+/*     display: table-cell; */
+/*     vertical-align: middle; */
+/*     text-align: center; */
+}
+
+div.btn-container i{
+    display: inline-block;
+    position: relative;
+    top: -9px;
+}
+
+label {
+    font-size: 13px;
+    color: #424242;
+    font-weight: 500;
+}
+
+.btn-color-mode-switch{
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner{
+    margin: 0px;
+    width: 160px;
+    height: 50px;
+    background: rgb(31,77,145);
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    /*box-shadow: 0px 0px 8px 0px rgba(17, 17, 17, 0.34) inset;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:before{
+    content: attr(data-on);
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    /* top: 15px; */
+    line-height: 50px;
+    right: 20px;
+    height: 50px;
+    color: white;
+
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:after{
+    content: attr(data-off);
+    width: 70px;
+    /* height: 16px; */
+    background: #fff;
+    border-radius: 26px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 6px -2px #111;
+    padding: 5px 0px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    color: rgb(31,77,145);
+}
+
+.btn-color-mode-switch > .alert{
+    display: none;
+    background: #FF9800;
+    border: none;
+    color: #fff;
+}
+
+.btn-color-mode-switch input[type="checkbox"]{
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0px;
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner{
+    /* background: #151515; */
+    /* color: #fff; */
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:after{
+    content: attr(data-on);
+    left: 83px;
+    /* top: 40px; */
+    /* background: #3c3c3c; */
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:before{
+    content: attr(data-off);
+    right: auto;
+    left: 20px;
+}
+.price-h span{
+    /* padding: 20px; */
+}
+
+.price-h{
+    padding: 10px;
+}
+
+table{
+    border-collapse: collapse;
+}
+thead tr th{
+    padding: 10px;
+}
+
+thead tr th:first-child{
+    width: 320px;
+    /* background-color: red; */
+    text-align: left;
+}
+
+tbody tr span{
+    padding: 10px;
+    display: block;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+tbody tr td{
+    padding:10px;
+    text-align: center;
+}
+tbody tr td:first-child{
+    text-align: left;
+}
+
+tbody tr{
+    border-bottom: 1.5px solid rgba(189, 189, 189, 0.72);
+}
+tbody tr:last-child{
+    border-bottom: 0px;
+}
+
+.rec{
+    /* background-color: red; */
+    width: 100px;
+    height: 100px;
+    /* clip-path: polygon(evenodd, 24.94% 24.94%, 74.81% 24.94%, 74.81% 74.81%, 53.03% 74.81%, 48.84% 82.08%, 44.64% 74.81%, 24.94% 74.81%); */
+    background-color: rgb(31,77,145);
+    clip-path: polygon(evenodd, -351% -410.06%, 238.81% 73.94%, 81.81% 74.81%, 59.03% 74.81%, 48.84% 86.08%, 38.64% 74.81%, -11.06% 74.81%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* clip-path: polygon(evenodd, -351% -410.06%, 238.81% 73.94%, 81.81% 74.81%, 52.03% 74.81%, 48.84% 84.08%, 44.64% 74.81%, -11.06% 74.81%); */
+}
+.rec span{
+    /* margin-top: -20px; */
+}
+thead tr th .option-cn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 72px;
+    background-color: rgb(121,148,189);
+    margin-top: -24px;
+    color: white;
+}
+thead tr th .rec .options{
+    margin-top: -20px;
+}
+
+.nxt-bt{
+    margin-top: 20px;
+    width:300px;
+    padding: 15px;
+    background-color: rgb(31,77,145);
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+tbody tr td:nth-child(2){
+    color:rgb(31,77,145);
+    font-weight: 600;
+}

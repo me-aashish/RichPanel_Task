@@ -8,6 +8,7 @@ const MONGO_URI = process.env.MONGO_URI;
 const apiRoutes = require('./routes/index');
 const {UserRepository} = require('./repository/index');
 const Plan = require('./model/plan');
+const Subscription = require('./model/subs');
 const authMiddleware = require('./middleware/auth-request-validator');
 
 const setUpAndStartServer = async() =>{
@@ -15,21 +16,66 @@ const setUpAndStartServer = async() =>{
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended : true }));
     app.use('/api', apiRoutes);
-    app.set('view engine', 'ejs')
+    app.set('view engine', 'ejs');
+
+    //stripe code
+    const stripe = require("stripe")('sk_test_51NdF4nSIY5cUAtITpQdqiDYMwb6fkBdAS6y0yoI9KrjFernYk6JV4wuLyb8znFz44Yq06YLNepA53raGHW7kQAS000h2yviUzt');
+
+    const calculateOrderAmount = (items) => {
+        // Replace this constant with a calculation of the order's amount
+        // Calculate the order total on the server to prevent
+        // people from directly manipulating the amount on the client
+        
+        const price = parseInt(items[0].Plan_Price);
+        console.log(price);
+        return price*100;
+      };
+      
+      try {
+        app.post("/create-payment-intent", async (req, res) => {
+          // console.log(req.user)
+          const { items } = req.body;
+          console.log(items);
+          // const desc = {"Plan Name" :items[0].Plan_Name, "Devices" : items[0].Devices}
+          const desc = `Plan Name : ${items[0].Plan_Name}, Devices : ${ items[0].Devices}`;
+          let devices = "";
+          items[0].Devices.forEach((device)=>{
+            devices = devices + ` ${device}`
+          })
+          // Create a PaymentIntent with the order amount and currency
+          const paymentIntent = await stripe.paymentIntents.create({
+            amount: calculateOrderAmount(items),
+            // amount: 100,
+            currency: "inr",
+            automatic_payment_methods: {
+              enabled: true,
+            },
+            description :desc
+          });
+          const amount = calculateOrderAmount(items)/100;
+          const subscriptionData = {
+            email:'dummysss',
+            name:'dummy',
+            plan_name:items[0].Plan_Name,
+            devices:devices,
+            price : amount,
+            cycle : items[0].Plan_Cycle
+          }
+          await Subscription.create(subscriptionData);
+          res.send({
+            clientSecret: paymentIntent.client_secret,
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
    
     app.listen(PORT, async()=>{
         console.log(`Server started on ${PORT}`);
         await connectDB(MONGO_URI);
         console.log('DB connected');
         
-        const planData = await Plan.find({}, {'_id' : 0, '__v' : 0});
-        // console.log(planData[0]);
-        app.get('/v1/plan',(req,res)=>{
-            // console.log(req.headers);
-            res.render('../views/plan.ejs',{
-                plan : planData,
-            })
-        })
+        
     })
 }
 

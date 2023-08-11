@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <span class="login-text">Login to your account</span>
+            <div class="input-container">
+                <div class="email-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter an email">
+                </div>
+                <div class="password-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter a password">
+                </div>
+                <div class="rem-checkbox">
+                    <input type="checkbox" id="remember" value="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+            </div>
+            <button class="login-bt" id="loginBtn">Login</button>
+            <span class="lr-switch">New to MyApp? <a href="./index.html">Sign Up</a></span>
+        </div>
+    </div>
+    <script src="./browserLogin.js"></script>
+    <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  ></script>
+</body>
+</html>

@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login & Registration Form</title>
-  <!---Custom CSS File--->
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,5 +48,50 @@
   ></script>
   <script src="./browserRegister.js"></script>
   <script src="./browserLogin.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./style/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-container">
+            <span class="register-text">Create Account</span>
+            <div class="input-container">
+                <div class="name-container">
+                    <label for="name">Name</label>
+                    <input type="text" id="registerName" placeholder="Name">
+                </div>
+                <div class="email-container">
+                    <label for="email">Email</label>
+                    <input type="text" id="registerEmail" placeholder="Email">
+                </div>
+                <div class="password-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="registerpassword" placeholder="Password">
+                </div>
+                <div class="rem-checkbox">
+                    <input type="checkbox" id="remember" value="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+            </div>
+            <button class="signup-bt" id="registerBtn">Sign Up</button>
+            <span class="lr-switch">Already have an account? <a href="./login.html">Login</a></span>
+            
+        </div>
+    </div>
+    <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  ></script>
+  <script src="./browserRegister.js"></script>
 </body>
 </html>
