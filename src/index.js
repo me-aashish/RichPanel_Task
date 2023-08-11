@@ -17,6 +17,7 @@ const setUpAndStartServer = async() =>{
     app.use(bodyParser.urlencoded({ extended : true }));
     app.use('/api', apiRoutes);
     app.set('view engine', 'ejs');
+    app.use(cors());
 
     //stripe code
     const stripe = require("stripe")('sk_test_51NdF4nSIY5cUAtITpQdqiDYMwb6fkBdAS6y0yoI9KrjFernYk6JV4wuLyb8znFz44Yq06YLNepA53raGHW7kQAS000h2yviUzt');
