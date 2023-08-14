@@ -8,4 +8,6 @@
 ###### database screenshot
 
 
+##### since the app is deployed on a free hosting site, it may happen that app may not load sometimes due to inactivity, so please do let me know so that I can restart the server so that it becomes live again. Thanks!
+
 
